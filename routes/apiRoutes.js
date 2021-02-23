@@ -1,7 +1,9 @@
 const router = require("express").Router();
 const store = require("../db/store")
 // const index = require("../public/assets/js/index")
-
+router.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'))
+})
 //GET "/api/notes" responds with all notes from the database 
 router.get("/notes", (req, res) => {
 
